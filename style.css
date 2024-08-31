@@ -6,51 +6,59 @@
 
 .clock {
     margin: 10em auto 10em auto;
-    border-radius: 50%;
+    border-radius: 100%;
     border: 3px solid black;
-    height: 300px;
+    height: 400px;
+    width: 400px;
     position: relative;
-    width: 300px;
-}
-
-.minutes-container, .hours-container {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    
 }
 
 .hours {
+    width: 140px;
+    height: 2px;
     background-color: black;
-    height: 20%;
-    left: 48.75%;
     position: absolute;
-    top: 30%;
-    transform-origin: 50% 100%;
-    width: 7px;
+    top: 200px;
+    left: 180px;
+    transform-origin: 20px 50%;
+    transform: rotate(-90deg);
+    animation: hours;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
-.minutes {
+.min {
+    width: 200px;
+    height: 2px;
     background-color: black;
-    height: 40%;
-    left: 49%;
     position: absolute;
-    top: 10%;
-    transform-origin: 50% 100%;
-    width: 5px;
+    top: 200px;
+    left: 180px;
+    transform-origin: 20px 50%;
+    animation: min;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
-.hours-container {
-    animation: rotate 200s infinite linear;
-}
-
-.minutes-container {
-    animation: rotate 20s infinite linear;
-}
-
-@keyframes rotate {
-    100% {
-      transform: rotateZ(360deg);
+@keyframes hours {
+    form {
+        transform: rotate(-90deg);
     }
-  }
+
+    to {
+        transform: rotate(270deg);
+    }
+}
+
+@keyframes min {
+    form {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
